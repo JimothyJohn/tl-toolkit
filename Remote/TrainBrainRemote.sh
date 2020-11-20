@@ -8,10 +8,6 @@ export DATA_DOWNLOAD_DIR=/data
 export SPECS_DIR=/specs
 export PROGRAM_DIR=/TLT
 
-INSTANCE_ID=i-0f732024c665202d5
-PUBLIC_IP=54.205.166.128
-USER=ubuntu
-
 PARAMS=""
 case "$1" in
     -t|--train)
@@ -28,7 +24,7 @@ case "$1" in
             -k $KEY
         ;;
     -v|--vis)
-        mkdir -p $MODEL_DIR/askrcnn_annotated_images
+        mkdir -p $MODEL_DIR/maskrcnn_annotated_images
         tlt-infer mask_rcnn -i $DATA_DOWNLOAD_DIR/raw-data/test2017 \
             -o $MODEL_DIR/maskrcnn_annotated_images \
             -e $SPECS_DIR/maskrcnn_train_resnet50.txt \

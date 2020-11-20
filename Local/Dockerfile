@@ -3,11 +3,11 @@ FROM nvcr.io/nvidia/tlt-streamanalytics:v2.0_py3
 
 # Move to root
 WORKDIR /
-RUN mkdir training-data tlt-toolkit
+RUN mkdir tlt-toolkit
 
 # Install python libraries
-COPY requirements.txt ./requirements.txt
+COPY ../requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 # Copy application
-COPY ./tlt-toolkit ./tlt-toolkit
+COPY . ./tlt-toolkit
